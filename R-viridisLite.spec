@@ -4,7 +4,7 @@
 #
 Name     : R-viridisLite
 Version  : 0.3.0
-Release  : 12
+Release  : 13
 URL      : https://cran.r-project.org/src/contrib/viridisLite_0.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/viridisLite_0.3.0.tar.gz
 Summary  : Default Color Maps from 'matplotlib' (Lite Version)
