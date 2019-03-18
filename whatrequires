@@ -1,5 +1,7 @@
 # This file contains recursive sources that require this package
+R-SGP
 R-ggplot2
+R-plotly
 R-rasterVis
 R-scales
 R-viridis
