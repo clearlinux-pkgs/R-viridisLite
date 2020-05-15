@@ -4,37 +4,35 @@
 #
 Name     : R-viridisLite
 Version  : 0.3.0
-Release  : 30
+Release  : 31
 URL      : https://cran.r-project.org/src/contrib/viridisLite_0.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/viridisLite_0.3.0.tar.gz
 Summary  : Default Color Maps from 'matplotlib' (Lite Version)
 Group    : Development/Tools
 License  : MIT
-Requires: R-rlang
-BuildRequires : R-assertthat
-BuildRequires : R-rlang
 BuildRequires : buildreq-R
 
 %description
-No detailed description available
+'inferno', and 'cividis' color maps for 'R'. 'viridis', 'magma', 'plasma',
 
 %prep
 %setup -q -c -n viridisLite
+cd %{_builddir}/viridisLite
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552953699
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1589509693
 
 %install
-export SOURCE_DATE_EPOCH=1552953699
+export SOURCE_DATE_EPOCH=1589509693
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -60,12 +58,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  viridisLite || :
+R CMD check --no-manual --no-examples --no-codoc viridisLite || :
 
 
 %files
