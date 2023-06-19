@@ -5,7 +5,7 @@
 #
 Name     : R-viridisLite
 Version  : 0.4.2
-Release  : 54
+Release  : 55
 URL      : https://cran.r-project.org/src/contrib/viridisLite_0.4.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/viridisLite_0.4.2.tar.gz
 Summary  : Colorblind-Friendly Color Maps (Lite Version)
